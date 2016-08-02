@@ -20,16 +20,18 @@ int main(void){
             else
                 ret = 0;
         }else{
-            if(r1+r2 > dist){
-                if(abs(abs(r1)-abs(r2)) == dist)
-                    ret = 1;
-                else
-                    ret = 2;
-            }
-            else if(r1+r2 == dist)
-                ret = 1;
-            else
+           if(r1+r2 < dist)
                 ret = 0;
+            else if(r1+r2 == dist || abs(r1-r2) == dist)
+                ret = 1;
+            else{
+                if(r1 > r2){
+                    if(r1 > 2*r2)
+                        ret = 0;
+                }else
+                    if(2*r1 < r2)
+                        ret = 0;
+            }
         }
         cout<<ret<<endl;
     }
