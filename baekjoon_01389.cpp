@@ -1,55 +1,62 @@
 #include <iostream>
+#include <cstring>
 #include <vector>
+#include <algorithm>
+#include <limits>
+#include <utility>
 using namespace std;
 
-vector<vector<int> > adj;
-vector<bool> visited;
-int result[100][100] = {0,};
+const int MAX_V = 101;
+const int INF = numeric_limits<int>::max();
 
-void dfs(int here){
-	visited[here] = true;
-	for(int i=0; i<adj[here].size(); ++i){
-		int there = adj[here][i];
-		if(!visited[there]){
-			cout<<here<<" "<<there<<endl;
-			result[here][there]++;
-			result[there][here]++;
-			dfs(there);
-		}
-	}
-	cout<<endl;
+unsigned int adj[MAX_V][MAX_V];
+int via[MAX_V][MAX_V];
+
+void floyd(int numOfV){
+	for(int i=1; i<numOfV; ++i)
+		adj[i][i] = 0;
+	memset(via, -1, sizeof(via));
+	for(int k=1; k<numOfV; ++k)
+		for(int i=1; i<numOfV; ++i)
+			for(int j=1; j<numOfV; ++j){
+				if(adj[i][j] > adj[i][k] + adj[k][j]){
+					via[i][j] = k;
+					adj[i][j] = adj[i][k] + adj[k][j];
+				}
+			}
 }
-
-void dfsAll(){
-	for(int i=1; i<adj.size(); ++i){
-		visited = vector<bool>(adj.size(), false);
-		if(!visited[i])
-			dfs(i);
-		
-	}
-}
-
 int main(void){
 	int numOfV, numOfE;
 	cin>>numOfV>>numOfE;
-
-	vector<int> temp;
-	adj = vector<vector<int> >(numOfV+1, temp);
 	
+	for(int i=1; i<=numOfV; ++i)
+		for(int j=1; j<=numOfV; ++j)
+			adj[i][j]=INF-1;
+
 	for(int i=0; i<numOfE; ++i){
 		int startV, endV;
 		cin>>startV>>endV;
-		adj[startV].push_back(endV);
-		adj[endV].push_back(startV);
+		adj[startV][endV] = 1;
+		adj[endV][startV] = 1;
 	}
 
-	dfsAll();
+	floyd(numOfV+1);
 
-	for(int i=1; i<=numOfV; ++i){
-		for(int j=1; j<=numOfV; ++j){
-			cout<<result[i][j]<<" ";
-		}
-		cout<<endl;
+	vector<pair<int, int> > sum;
+	
+	for(int i=0; i<=numOfV; ++i){
+		sum.push_back(make_pair(0, i));
 	}
+
+	for(int i=1; i<=numOfV; ++i)
+		for(int j=1; j<=numOfV; ++j)
+			sum[i].first += adj[i][j];
+
+	sort(sum.begin(), sum.end());
+
+	int result = sum[1].second;
+
+	cout<<result<<endl;
+
 	return 0;
 }
