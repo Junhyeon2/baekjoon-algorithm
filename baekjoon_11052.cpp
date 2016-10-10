@@ -1,3 +1,7 @@
+/* 문제 번호: 11052
+ * 문제 이름: 붕어빵 판매하기
+ * 알고리즘 분류: 동적 계획법(DP)
+ */
 #include <iostream>
 #include <cstring>
 using namespace std;
