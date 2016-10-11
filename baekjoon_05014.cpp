@@ -1,3 +1,7 @@
+/* 문제 번호: 05014
+ * 문제 이름: 스타트 링크
+ * 알고리즘 분류: BFS
+ */
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -5,8 +9,6 @@
 using namespace std;
 
 int F, S, G, U, D;
-
-vector<vector<int> > adj;
 
 int solve(int start){
     vector<bool> discovered(F+1, false);
@@ -52,7 +54,7 @@ int solve(int start){
 
 int main(void){
     cin>>F>>S>>G>>U>>D;
-        
+
     if(U == 0 && S < G || D == 0 && S > G){
         cout<<"use the stairs"<<endl;
     }else if(S == G){

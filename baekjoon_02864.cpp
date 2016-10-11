@@ -1,3 +1,7 @@
+/* 문제 번호: 2864
+ * 문제 이름: 5와 6의 차이
+ * 알고리즘 분류: 수학, 문자열 처리
+ */
 #include <iostream>
 #include <string>
 #include <cstdlib>
