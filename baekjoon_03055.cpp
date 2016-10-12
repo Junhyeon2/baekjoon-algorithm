@@ -55,7 +55,7 @@ int solve(Point s, Point e, vector<Point> w, vector<Point> r){
             sv.push_back(sq.front());
             sq.pop();
         }
-/*
+
         for(int i=0; i<R; ++i){
             for(int j=0; j<C; ++j){
                 cout<<visit[i][j]<<" ";
@@ -63,7 +63,7 @@ int solve(Point s, Point e, vector<Point> w, vector<Point> r){
             cout<<endl;
         }
         cout<<endl;
-*/
+
         for(int i=0; i<sv.size(); ++i){
             if(sv[i].first.x == e.x && sv[i].first.y == e.y){
                  ret = sv[i].second;
