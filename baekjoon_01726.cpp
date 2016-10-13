@@ -84,8 +84,8 @@ int solve(){
             curY = v[i].first.y;
             curD = v[i].first.dir;
             cnt = v[i].second;
-            //현재 위치 저장
-            track[curX][curY] = 2;
+            //현재 트랙 위치 변경.
+            //track[curX][curY] = 1;
 
             //방향회전하지 않은 곳이 있다면 큐에 삽입.
             if(curD == 1){
