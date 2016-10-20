@@ -1,3 +1,7 @@
+/* 문제 번호: 11403
+ * 문제 이름: 경로찾기
+ * 알고리즘 분류: DFS
+ */
 #include <iostream>
 #include <vector>
 using namespace std;

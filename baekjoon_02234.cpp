@@ -56,12 +56,12 @@ void solve(){
             v.push_back(q.front());
             q.pop();
         }
-        for(int i=1; i<=N; ++i){
-            for(int j=1; j<=M; ++j)
-                cout<<isVisited[i][j]<<" ";
-            cout<<endl;
-        }
-        cout<<endl;
+        // for(int i=1; i<=N; ++i){
+        //     for(int j=1; j<=M; ++j)
+        //         cout<<isVisited[i][j]<<" ";
+        //     cout<<endl;
+        // }
+        // cout<<endl;
 
         if(v.size() == 0){
             nextPos = nextVisit();
@@ -199,22 +199,23 @@ void solve(){
         maxSize = max(maxSize, roomSize[i]);
     }
 
-    int prevRoom, nextRoom;
     for(int i=1; i<=N; ++i){
         for(int j=1; j<=M; ++j){
-            if(i == 1 && j == 1)
-                prevRoom = isVisited[i][j];
-            if(prevRoom == -1)
-                prevRoom =  isVisited[i][j];
-            nextRoom = isVisited[i][j];
-            if(prevRoom != nextRoom){
-                //cout<<prevRoom<<" "<<nextRoom<<" 인접!"<<endl;
-                //cout<<roomSize[prevRoom]<<" "<<roomSize[nextRoom]<<" "<<mergeSize<<endl;
-                mergeSize = max(mergeSize, roomSize[prevRoom]+roomSize[nextRoom]);
-                prevRoom = nextRoom;
+            //오른쪽
+            if(isVisited[i][j] != isVisited[i][j+1]){
+                if(j+1 > M)
+                    mergeSize = max(mergeSize, roomSize[isVisited[i][j]]);
+                else
+                    mergeSize = max(mergeSize, roomSize[isVisited[i][j]]+roomSize[isVisited[i][j+1]]);
             }
+            
+            //아래쪽
+            if(isVisited[i][j] != isVisited[i+1][j])
+                if(i+1 > N)
+                    mergeSize = max(mergeSize, roomSize[isVisited[i][j]]);
+                else
+                    mergeSize = max(mergeSize, roomSize[isVisited[i][j]]+roomSize[isVisited[i+1][j]]);
         }
-        prevRoom = -1;
     }
     // for(int i=1; i<roomSize.size(); ++i){
     //     cout<<roomSize[i]<<" ";

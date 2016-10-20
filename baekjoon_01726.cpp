@@ -47,8 +47,7 @@ int solve(){
     //갈수 있는지 없는지 판단.
     bool isPossible[4], checkMove;
 
-    Robot leftR;
-    Robot rightR;
+    Robot curR;
     int ret = INF;
     while(true){
         //큐의 값을 벡터에 옮기고 큐를 비운다.
@@ -57,13 +56,13 @@ int solve(){
             q.pop();
         }
 
-        for(int i=1; i<=M; ++i){
-            for(int j=1; j<=N; ++j){
-                cout<<track[i][j]<<" ";
-            }
-            cout<<endl;
-        }
-        cout<<endl;
+        // for(int i=1; i<=M; ++i){
+        //     for(int j=1; j<=N; ++j){
+        //         cout<<track[i][j]<<" ";
+        //     }
+        //     cout<<endl;
+        // }
+        // cout<<endl;
 
 
         for(int i=0; i<v.size(); ++i){
@@ -78,32 +77,36 @@ int solve(){
         if(v.size() == 0)
             break;
 
-        cout<<v.size()<<endl;
-
         for(int i=0; i<v.size(); ++i){
-            leftR = rightR = v[i].first;
+            curR = v[i].first;
             //현재 로봇의 위치
             curX = v[i].first.x;
             curY = v[i].first.y;
             curD = v[i].first.dir;
             cnt = v[i].second;
+            track[curX][curY] = 1;
 
             for(int k=1; k<=3; ++k)
-                isPossible[k] = true;
+                isPossible[k] = false;
             //방향을 확인하여 앞에 갈 수 있는 것을 확인
             //dir 값 > 1 - 동, 2 - 서, 3 - 남, 4 - 북
             if(curD == 1){ //동: x 증가 값
                 //오른쪽
-                if(rightR.checkDir[3] == false){
-                    rightR.checkDir[3] = true;
-                    rightR.dir = 3;
-                    q.push(make_pair(rightR, cnt+1));
+                if(curR.checkDir[3] == false){
+                    curR.checkDir[3] = true;
+                    curR.dir = 3;
+                    q.push(make_pair(curR, cnt+1));
                 }
                 //왼쪽
-                if(leftR.checkDir[4] == false){
-                    leftR.checkDir[4] = true;
-                    leftR.dir = 4;
-                    q.push(make_pair(leftR, cnt+1));
+                if(curR.checkDir[4] == false){
+                    curR.checkDir[4] = true;
+                    curR.dir = 4;
+                    q.push(make_pair(curR, cnt+1));
+                }
+                if(curR.checkDir[2] == false){
+                    curR.checkDir[2] = true;
+                    curR.dir = 2;
+                    q.push(make_pair(curR, cnt+2));
                 }
                 
                 //방향에서 갈 수있는 길이 있는지 찾는다.
@@ -112,7 +115,7 @@ int solve(){
                         //방문한적이 없을 때
                         checkMove = true;
                         for(int k=curY+1; k<=curY+j; ++k){
-                            if(track[curX][k] != 0){
+                            if(track[curX][k] == 1){
                                 checkMove = false;
                             }
                         }
@@ -121,57 +124,67 @@ int solve(){
                     }
                 }
 
-                for(int j=1; j<=3; ++j){
+                for(int j=3; j>=1; --j){
                     //이동
                     if(isPossible[j]){
                         q.push(make_pair(Robot(curX, curY+j, curD), cnt+1));
-                        track[curX][curY+j] = cnt;
+                        //track[curX][curY+j] = 1;
                     }
                 }
             }else if(curD == 2){ //서: x 감소 값
                 //오른쪽
-                if(rightR.checkDir[3] == false){
-                    rightR.checkDir[3] = true;
-                    rightR.dir = 3;
-                    q.push(make_pair(rightR, cnt+1));
+                if(curR.checkDir[3] == false){
+                    curR.checkDir[3] = true;
+                    curR.dir = 3;
+                    q.push(make_pair(curR, cnt+1));
                 }
                 //왼쪽
-                if(leftR.checkDir[4] == false){
-                    leftR.checkDir[4] = true;
-                    leftR.dir = 4;
-                    q.push(make_pair(leftR, cnt+1));
+                if(curR.checkDir[4] == false){
+                    curR.checkDir[4] = true;
+                    curR.dir = 4;
+                    q.push(make_pair(curR, cnt+1));
+                }
+                if(curR.checkDir[1] == false){
+                    curR.checkDir[1] = true;
+                    curR.dir = 1;
+                    q.push(make_pair(curR, cnt+2));
                 }
                 //방향에서 갈 수있는 길이 있는지 찾는다.
                 for(int j=1; j<=3; ++j){
                     if(curY-j >= 1){ //다음 진행 위치가 범위를 벗어나지 않고
                         checkMove = true;
                         for(int k=curY-1; k>=curY-j; --k){
-                            if(track[curX][k] != 0)
+                            if(track[curX][k] == 1)
                                 checkMove = false;
                         }
                         if(checkMove)
                             isPossible[j] = true;
                     }
                 }
-                for(int j=1; j<=3; ++j){
+                for(int j=3; j>=1; --j){
                     //이동
                     if(isPossible[j]){
                         q.push(make_pair(Robot(curX, curY-j, curD), cnt+1));
-                        track[curX][curY-j] = cnt;
+                        //track[curX][curY-j] = 1;
                     }
                 }
             }else if(curD == 3){ //남: y 증가 값
                 //왼쪽
-                if(leftR.checkDir[1] == false){
-                    leftR.checkDir[1] = true;
-                    leftR.dir = 1;
-                    q.push(make_pair(leftR, cnt+1));
+                if(curR.checkDir[1] == false){
+                    curR.checkDir[1] = true;
+                    curR.dir = 1;
+                    q.push(make_pair(curR, cnt+1));
                 }
                 //오른쪽
-                if(rightR.checkDir[2] == false){
-                    rightR.checkDir[2] = true;
-                    rightR.dir = 2;
-                    q.push(make_pair(rightR, cnt+1));
+                if(curR.checkDir[2] == false){
+                    curR.checkDir[2] = true;
+                    curR.dir = 2;
+                    q.push(make_pair(curR, cnt+1));
+                }
+                if(curR.checkDir[4] == false){
+                    curR.checkDir[4] = true;
+                    curR.dir = 4;
+                    q.push(make_pair(curR, cnt+2));
                 }
                 //방향에서 갈 수있는 길이 있는지 찾는다.
                 for(int j=1; j<=3; ++j){
@@ -179,7 +192,7 @@ int solve(){
                         checkMove = true;
                         for(int k=curX+1; k<=curX+j; ++k){
                             //cout<<k<<" "<<curY<<" "<<cnt+1<<endl;
-                            if(track[k][curY] != 0){
+                            if(track[k][curY] == 1){
                                 checkMove = false;
                             }
                         }
@@ -188,50 +201,55 @@ int solve(){
                         }
                     }
                 }
-                for(int j=1; j<=3; ++j){
+                for(int j=3; j>=1; --j){
                     //이동
                     if(isPossible[j]){
                         q.push(make_pair(Robot(curX+j, curY, curD), cnt+1));
-                        track[curX+j][curY] = cnt;
+                        //track[curX+j][curY] = 1;
                     }
                 }
             }else if(curD == 4){ //북: y 감소 값
                 //오른쪽
-                if(rightR.checkDir[1] == false){
-                    rightR.checkDir[1] = true;
-                    rightR.dir = 1;
-                    q.push(make_pair(rightR, cnt+1));
+                if(curR.checkDir[1] == false){
+                    curR.checkDir[1] = true;
+                    curR.dir = 1;
+                    q.push(make_pair(curR, cnt+1));
                 }
-                 //왼쪽
-                if(leftR.checkDir[2] == false){
-                    leftR.checkDir[2] = true;
-                    leftR.dir = 2;
-                    q.push(make_pair(leftR, cnt+1));
+                //왼쪽
+                if(curR.checkDir[2] == false){
+                    curR.checkDir[2] = true;
+                    curR.dir = 2;
+                    q.push(make_pair(curR, cnt+1));
                 }
-                
+                if(curR.checkDir[3] == false){
+                    curR.checkDir[3] = true;
+                    curR.dir = 3;
+                    q.push(make_pair(curR, cnt+2));
+                }
                 //방향에서 갈 수있는 길이 있는지 찾는다.
                 for(int j=1; j<=3; ++j){
                     if(curX-j >= 1){ //다음 진행 위치가 범위를 벗어나지 않고
                         checkMove = true;
                         for(int k=curX-1; k>=curX-j; --k){
-                            if(track[k][curY] != 0)
+                            if(track[k][curY] == 1){
                                 checkMove = false;
+                            }
                         }
                         if(checkMove){
                             isPossible[j] = true;
                         }
                     }
                 }
-                for(int j=1; j<=3; ++j){
+                for(int j=3; j>=1; --j){
                     //이동
                     if(isPossible[j]){
                         q.push(make_pair(Robot(curX-j, curY, curD), cnt+1));
-                        track[curX-j][curY] = cnt;
+                        //track[curX-j][curY] = 1;
                     }
                 }
             }
-            if(isPossible[1] == false && isPossible[2] == false && isPossible[3] == false){
-            }
+            // if(isPossible[1] || isPossible[2] || isPossible[3])
+                
         }
         v.clear();
     }
