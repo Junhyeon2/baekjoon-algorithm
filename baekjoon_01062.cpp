@@ -23,7 +23,7 @@ bool solve(string word, int k){
 		alpha.push_back('i');
 		alpha.push_back('c');
 		//cout<<newWord<<endl;
-		
+
 		for(int i=0; i<newWord.length(); ++i){
 			bool isExisit = false;
 			for(int j=0; j<alpha.size(); ++j){
@@ -39,9 +39,9 @@ bool solve(string word, int k){
 	}else{
 		return false;
 	}
-	
+
 	if(k >=0 || k == cnt){
-		//cout<<word<<endl;
+
 		return true;
 	}
 	else
