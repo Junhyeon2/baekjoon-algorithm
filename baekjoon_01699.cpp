@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int d[100001];
+
+int main(){
+    int N;
+    cin>>N;
+
+    for(int i=1; i<=N; ++i){
+        for(int j=1; j*j<=i; ++j){
+            if(d[i] > d[i-j*j]+1 || d[i] == 0)
+                d[i] = d[i-j*j]+1;
+        }
+    }
+
+    cout<<d[N]<<endl;
+    return 0;
+}
