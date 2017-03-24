@@ -2,6 +2,7 @@
 ### 자료구조 
 * [1158번: 조세퍼스 문제](https://www.acmicpc.net/problem/1158) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01158.cpp) / 풀이
 ### 수학 
+* [1002번: 터렛](https://www.acmicpc.net/problem/1002) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01002.cpp) / [풀이](http://codeeffect.tistory.com/17)
 * [1212번: 8진수 2진수](https://www.acmicpc.net/problem/1212) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01212.cpp) / 풀이 / 해결중
 * [1373번: 2진수 8진수](https://www.acmicpc.net/problem/1373) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01373.cpp) / 풀이
 * [1934번: 최소공배수](https://www.acmicpc.net/problem/1934) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01934.cpp) / 풀이
@@ -50,8 +51,6 @@
 * [1062번: 가르침](https://www.acmicpc.net/problem/1062) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01062.cpp) / 풀이 / 해결중
 * [1475번: 방 번호](https://www.acmicpc.net/problem/1475) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01475.cpp) / 풀이
 * [1718번: 암호](https://www.acmicpc.net/problem/1718) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01718.cpp) / 풀이
-### 기하 알고리즘
-* [1002번: 터렛](https://www.acmicpc.net/problem/1002) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01002.cpp) / [풀이](http://codeeffect.tistory.com/17)
 ### 정렬 
 * [1005번: ACM Craft](https://www.acmicpc.net/problem/1005) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01005.cpp) / 풀이 / 해결중
 * [1517번: 버블 소트](https://www.acmicpc.net/problem/1517) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01517.cpp) / 풀이
