@@ -3,7 +3,7 @@
 * [1003번: 피보나치 함수](https://www.acmicpc.net/problem/1003) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/baekjoon_01003.cpp) / [풀이](http://codeeffect.tistory.com/18)
 ### 그래프
 ### 문자열 처리
-* [1032번: 피보나치 함수](https://www.acmicpc.net/problem/1032) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/baekjoon_01032.cpp) / [풀이](http://codeeffect.tistory.com/21)
+* [1032번: 명령 프롬프트](https://www.acmicpc.net/problem/1032) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/baekjoon_01032.cpp) / [풀이](http://codeeffect.tistory.com/21)
 ### 기하 알고리즘
 * [1002번: 터렛](https://www.acmicpc.net/problem/1002) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/baekjoon_01002.cpp) / [풀이](http://codeeffect.tistory.com/17)
 ### 분류 없음 
