@@ -2,12 +2,12 @@
 ### 자료구조 
 * [1158번: 조세퍼스 문제](https://www.acmicpc.net/problem/1158) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01158.cpp) / 풀이
 ### 수학 
-* [1002번: 터렛](https://www.acmicpc.net/problem/1002) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01002.cpp) / [풀이](http://codeeffect.tistory.com/17)
+* [1002번: 터렛](https://www.acmicpc.net/problem/1002) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01002.cpp) / [풀이](https://junhyeon2.github.io/beakjoon-1002/)
 * [1212번: 8진수 2진수](https://www.acmicpc.net/problem/1212) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01212.cpp) / 풀이 / 해결중
 * [1373번: 2진수 8진수](https://www.acmicpc.net/problem/1373) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01373.cpp) / 풀이
 * [1934번: 최소공배수](https://www.acmicpc.net/problem/1934) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01934.cpp) / 풀이
 ### 동적계획법(DP)
-* [1003번: 피보나치 함수](https://www.acmicpc.net/problem/1003) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01003.cpp) / [풀이](http://codeeffect.tistory.com/18)
+* [1003번: 피보나치 함수](https://www.acmicpc.net/problem/1003) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01003.cpp) / [풀이](https://junhyeon2.github.io/beakjoon-1003/)
 * [1149번: RGB거리](https://www.acmicpc.net/problem/1149) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01149.cpp) / 풀이
 * [1301번: 비즈 공예](https://www.acmicpc.net/problem/1301) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01301.cpp) / 풀이 / 해결중
 * [1309번: 동물원](https://www.acmicpc.net/problem/1309) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01309.cpp) / 풀이
@@ -47,7 +47,7 @@
 * [2206번: 벽 부수고 이동하기](https://www.acmicpc.net/problem/2206) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_02206.cpp) / 풀이
 * [2234번: 성곽](https://www.acmicpc.net/problem/2234) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_02234.cpp) / 풀이
 ### 문자열 처리
-* [1032번: 명령 프롬프트](https://www.acmicpc.net/problem/1032) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01032.cpp) / [풀이](http://codeeffect.tistory.com/21)
+* [1032번: 명령 프롬프트](https://www.acmicpc.net/problem/1032) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01032.cpp) / [풀이](https://junhyeon2.github.io/beakjoon-1032/)
 * [1062번: 가르침](https://www.acmicpc.net/problem/1062) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01062.cpp) / 풀이 / 해결중
 * [1475번: 방 번호](https://www.acmicpc.net/problem/1475) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01475.cpp) / 풀이
 * [1718번: 암호](https://www.acmicpc.net/problem/1718) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01718.cpp) / 풀이
@@ -55,6 +55,6 @@
 * [1005번: ACM Craft](https://www.acmicpc.net/problem/1005) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01005.cpp) / 풀이 / 해결중
 * [1517번: 버블 소트](https://www.acmicpc.net/problem/1517) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01517.cpp) / 풀이
 ### 분류 없음 
-* [1004번: 어린왕자](https://www.acmicpc.net/problem/1004) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01004.cpp) / [풀이](http://codeeffect.tistory.com/19)
-* [1009번: 분산처리](https://www.acmicpc.net/problem/1009) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01009.cpp) / [풀이](http://codeeffect.tistory.com/20)
+* [1004번: 어린왕자](https://www.acmicpc.net/problem/1004) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01004.cpp) / [풀이](https://junhyeon2.github.io/beakjoon-1004/)
+* [1009번: 분산처리](https://www.acmicpc.net/problem/1009) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_01009.cpp) / [풀이](https://junhyeon2.github.io/beakjoon-1009/)
 * [2447번: 별찍기 - 10](https://www.acmicpc.net/problem/2447) / [소스코드](https://github.com/Junhyeon2/baekjoon-algorithm/blob/master/src/baekjoon_02447.cpp) / 풀이
